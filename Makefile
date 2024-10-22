@@ -1,0 +1,25 @@
+CC	=	g++
+
+NAME	=	SaxionCpp
+
+SRC_PATH	=	./src/
+SRC_NAME	=	main.cpp
+
+SRC	=	$(addprefix $(SRC_PATH), $(SRC_NAME))
+
+OBJ	=	$(SRC:.cpp=.o)
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
