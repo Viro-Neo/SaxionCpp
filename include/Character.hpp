@@ -6,7 +6,8 @@
 
 class Character {
 public:
-     explicit Character(int inventorySize);
+    Character() = default;
+    explicit Character(int inventorySize);
     ~Character() = default;
 
     void addInventoryItem(const std::string& item);

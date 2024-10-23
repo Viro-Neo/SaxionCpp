@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-int main()
+void inventoryTest()
 {
     Character character(5);
 
@@ -11,5 +11,10 @@ int main()
     character.addInventoryItem("Arrow");
     character.addInventoryItem("Dagger");
     character.printInventory();
+}
+
+int main()
+{
+    Character player(5);
     return 0;
 }
