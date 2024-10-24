@@ -15,6 +15,10 @@ void Enemy::displayStats() const {
 }
 
 void Enemy::assignStats() {
+    if (totalPoints == 0) {
+        std::cerr << "Total points not set" << std::endl;
+        return;
+    }
     auto points = static_cast<float>(totalPoints);
     float ratioHp = 100.0f / 120.0f;
     float ratioAtk = 10.0f / 120.0f;
@@ -25,24 +29,4 @@ void Enemy::assignStats() {
     attack = static_cast<int>(points * ratioAtk);
     defense = static_cast<int>(points * ratioDef);
     agility = static_cast<int>(points * ratioAgl);
-}
-
-void Enemy::setHealth(int hp) {
-    this->health = hp;
-}
-
-void Enemy::setAttack(int atk) {
-    this->attack = atk;
-}
-
-void Enemy::setDefense(int def) {
-    this->defense = def;
-}
-
-void Enemy::setAgility(int agl) {
-    this->agility = agl;
-}
-
-void Enemy::setTotalPoints(int ttPts) {
-    this->totalPoints = ttPts;
 }
