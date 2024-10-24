@@ -14,6 +14,21 @@ void Enemy::displayStats() const {
     std::cout << std::endl;
 }
 
+void Enemy::assignStats() {
+    int points = totalPoints;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, points);
+
+    health = dis(gen);
+    points -= health;
+    attack = dis(gen);
+    points -= attack;
+    defense = dis(gen);
+    points -= defense;
+    agility = dis(gen);
+}
+
 void Enemy::setHealth(int hp) {
     this->health = hp;
 }

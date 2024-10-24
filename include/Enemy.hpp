@@ -2,6 +2,7 @@
 #define SAXIONCPP_ENEMY_HPP
 
 #include <iostream>
+#include <random>
 
 class Enemy {
 public:
@@ -9,6 +10,7 @@ public:
     ~Enemy() = default;
 
     void displayStats() const;
+    void assignStats();
 
     void setHealth(int health);
     void setAttack(int attack);

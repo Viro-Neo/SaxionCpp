@@ -1,10 +1,9 @@
 #include "Player.hpp"
 #include "Enemy.hpp"
-#include <random>
 #include <algorithm>
 
 // Randomize total points for each enemy, the last enemy will have the highest total points
-void randomizeTotalPoints(std::shared_ptr<Enemy[]> enemies, int nbrEnemies) {
+void randomizeTotalPoints(const std::shared_ptr<Enemy[]>& enemies, int nbrEnemies) {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dis(40, 120);
@@ -25,6 +24,8 @@ int main()
     std::shared_ptr<Enemy[]> enemies = std::shared_ptr<Enemy[]>(new Enemy[nbrEnemies]);
 
     randomizeTotalPoints(enemies, nbrEnemies);
+    for (int i = 0; i < nbrEnemies; i++)
+        enemies[i].assignStats();
 
     player.displayStats();
     for (int i = 0; i < 5; i++)
