@@ -4,6 +4,8 @@
 #include <iostream>
 #include <memory>
 
+#include "Enemy.hpp"
+
 class Player {
 public:
     explicit Player(int inventorySize);
@@ -23,6 +25,10 @@ public:
     [[nodiscard]] int getAttack() const { return attack; }
     [[nodiscard]] int getDefense() const { return defense; }
     [[nodiscard]] int getAgility() const { return agility; }
+
+    void dealDamageToEnemy(Enemy& enemy) const;
+    void heal();
+    static void doNothing();
 
 private:
     std::string name;

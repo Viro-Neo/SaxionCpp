@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <random>
+
 #include "Player.hpp"
 
 class Enemy {
@@ -24,6 +25,10 @@ public:
     [[nodiscard]] int getDefense() const { return defense; }
     [[nodiscard]] int getAgility() const { return agility; }
     [[nodiscard]] int getTotalPoints() const { return totalPoints; }
+
+    void dealDamageToPlayer(Player& player) const;
+    void heal();
+    static void doNothing();
 
 private:
     std::string name;

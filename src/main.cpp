@@ -1,5 +1,4 @@
 #include "Player.hpp"
-#include "Enemy.hpp"
 #include <algorithm>
 
 // Randomize total points for each enemy, the last enemy will have the highest total points

@@ -30,3 +30,26 @@ void Enemy::assignStats() {
     defense = static_cast<int>(points * ratioDef);
     agility = static_cast<int>(points * ratioAgl);
 }
+
+void Enemy::dealDamageToPlayer(Player& player) const {
+    int damage = attack - player.getDefense();
+    if (damage < 0)
+        damage = 0;
+    std::cout << "Enemy deals " << damage << " damage to Player" << std::endl;
+    player.setHealth(player.getHealth() - damage);
+    std::cout << "Player health: " << player.getHealth() << std::endl;
+}
+
+void Enemy::heal() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, defense);
+
+    int healAmount = dis(gen);
+    health += healAmount;
+    std::cout << "Enemy healed for " << healAmount << " health" << std::endl;
+}
+
+void Enemy::doNothing() {
+    std::cout << "Enemy does nothing" << std::endl;
+}
