@@ -1,19 +1,20 @@
-#ifndef SAXIONCPP_CHARACTER_HPP
-#define SAXIONCPP_CHARACTER_HPP
+#ifndef SAXIONCPP_PLAYER_HPP
+#define SAXIONCPP_PLAYER_HPP
 
 #include <iostream>
 #include <memory>
 
-class Character {
+class Player {
 public:
-    Character() = default;
-    explicit Character(int inventorySize);
-    ~Character() = default;
+    explicit Player(int inventorySize);
+    ~Player() = default;
 
     void addInventoryItem(const std::string& item);
     void printInventory() const;
     void removeInventoryItem(int index);
+    void displayStats() const;
 private:
+    std::string name;
     int health;
     int attack;
     int defense;
@@ -22,4 +23,4 @@ private:
     std::unique_ptr<std::string[]> inventory;
 };
 
-#endif //SAXIONCPP_CHARACTER_HPP
+#endif //SAXIONCPP_PLAYER_HPP
