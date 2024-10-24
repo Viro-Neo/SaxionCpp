@@ -17,9 +17,36 @@ void randomizeTotalPoints(const std::shared_ptr<Enemy[]>& enemies, int nbrEnemie
     }
 }
 
+void battle(Player& player, Enemy& enemy) {
+    while (player.getHealth() > 0 && enemy.getHealth() > 0) {
+        int playerDamage = player.getAttack() - enemy.getDefense();
+        int enemyDamage = enemy.getAttack() - player.getDefense();
+
+        if (playerDamage < 0)
+            playerDamage = 0;
+        if (enemyDamage < 0)
+            enemyDamage = 0;
+
+        std::cout << "Player deals " << playerDamage << " damage to Enemy" << std::endl;
+        enemy.setHealth(enemy.getHealth() - playerDamage);
+        std::cout << "Enemy health: " << enemy.getHealth() << std::endl;
+
+        std::cout << "Enemy deals " << enemyDamage << " damage to Player" << std::endl;
+        player.setHealth(player.getHealth() - enemyDamage);
+        std::cout << "Player health: " << player.getHealth() << std::endl;
+    }
+
+    if (player.getHealth() <= 0 && enemy.getHealth() <= 0)
+        std::cout << "Draw" << std::endl;
+    else if (player.getHealth() <= 0)
+        std::cout << "Enemy wins" << std::endl;
+    else
+        std::cout << "Player wins" << std::endl;
+}
+
 int main()
 {
-    int nbrEnemies = 10;
+    int nbrEnemies = 5;
     Player player(5);
     std::shared_ptr<Enemy[]> enemies = std::shared_ptr<Enemy[]>(new Enemy[nbrEnemies]);
 
@@ -30,5 +57,12 @@ int main()
     player.displayStats();
     for (int i = 0; i < nbrEnemies; i++)
         enemies[i].displayStats();
+
+    std::cout << "Battle simulation" << std::endl;
+    for (int i = 0; i < nbrEnemies; i++) {
+        std::cout << "Player vs Enemy " << i << std::endl;
+        battle(player, enemies[i]);
+        std::cout << std::endl;
+    }
     return 0;
 }
