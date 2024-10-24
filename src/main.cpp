@@ -19,7 +19,7 @@ void randomizeTotalPoints(const std::shared_ptr<Enemy[]>& enemies, int nbrEnemie
 
 int main()
 {
-    int nbrEnemies = 5;
+    int nbrEnemies = 10;
     Player player(5);
     std::shared_ptr<Enemy[]> enemies = std::shared_ptr<Enemy[]>(new Enemy[nbrEnemies]);
 
@@ -28,7 +28,7 @@ int main()
         enemies[i].assignStats();
 
     player.displayStats();
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < nbrEnemies; i++)
         enemies[i].displayStats();
     return 0;
 }

@@ -15,18 +15,16 @@ void Enemy::displayStats() const {
 }
 
 void Enemy::assignStats() {
-    int points = totalPoints;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(1, points);
+    auto points = static_cast<float>(totalPoints);
+    float ratioHp = 100.0f / 120.0f;
+    float ratioAtk = 10.0f / 120.0f;
+    float ratioDef = 5.0f / 120.0f;
+    float ratioAgl = 5.0f / 120.0f;
 
-    health = dis(gen);
-    points -= health;
-    attack = dis(gen);
-    points -= attack;
-    defense = dis(gen);
-    points -= defense;
-    agility = dis(gen);
+    health = static_cast<int>(points * ratioHp);
+    attack = static_cast<int>(points * ratioAtk);
+    defense = static_cast<int>(points * ratioDef);
+    agility = static_cast<int>(points * ratioAgl);
 }
 
 void Enemy::setHealth(int hp) {
