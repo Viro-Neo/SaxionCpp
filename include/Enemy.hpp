@@ -26,10 +26,6 @@ public:
     [[nodiscard]] int getAgility() const { return agility; }
     [[nodiscard]] int getTotalPoints() const { return totalPoints; }
 
-    void dealDamageToPlayer(Player& player) const;
-    void heal();
-    static void doNothing();
-
 private:
     std::string name;
     int health;

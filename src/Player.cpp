@@ -38,26 +38,3 @@ void Player::displayStats() const {
     std::cout << "Agility: " << agility << std::endl;
     std::cout << std::endl;
 }
-
-void Player::dealDamageToEnemy(Enemy& enemy) const {
-    int damage = attack - enemy.getDefense();
-    if (damage < 0)
-        damage = 0;
-    std::cout << "Player deals " << damage << " damage to Enemy" << std::endl;
-    enemy.setHealth(enemy.getHealth() - damage);
-    std::cout << "Enemy health: " << enemy.getHealth() << std::endl;
-}
-
-void Player::heal() {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(1, defense);
-
-    int healAmount = dis(gen);
-    health += healAmount;
-    std::cout << "Player healed for " << healAmount << " health" << std::endl;
-}
-
-void Player::doNothing() {
-    std::cout << "Player does nothing" << std::endl;
-}
