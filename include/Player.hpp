@@ -1,10 +1,9 @@
 #ifndef SAXIONCPP_PLAYER_HPP
 #define SAXIONCPP_PLAYER_HPP
 
-#include <iostream>
-#include <memory>
-
 #include "Enemy.hpp"
+#include <memory>
+#include <iostream>
 
 class Player {
 public:
@@ -16,10 +15,10 @@ public:
     void removeInventoryItem(int index);
     void displayStats() const;
 
-    void setHealth(int hp) { this->health = hp; }
-    void setAttack(int atk) { this->attack = atk; }
-    void setDefense(int def) { this->defense = def; }
-    void setAgility(int agl) { this->agility = agl; }
+    void setHealth(const int hp) { this->health = hp; }
+    void setAttack(const int atk) { this->attack = atk; }
+    void setDefense(const int def) { this->defense = def; }
+    void setAgility(const int agl) { this->agility = agl; }
 
     [[nodiscard]] int getHealth() const { return health; }
     [[nodiscard]] int getAttack() const { return attack; }

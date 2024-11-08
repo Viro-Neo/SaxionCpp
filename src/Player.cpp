@@ -1,6 +1,6 @@
 #include "Player.hpp"
 
-Player::Player(int inventorySize) : health(100), attack(10), defense(5), agility(5), inventorySize(inventorySize) {
+Player::Player(const int inventorySize) : health(100), attack(10), defense(5), agility(5), inventorySize(inventorySize) {
     name = "Player";
     inventory = std::make_unique<std::string[]>(inventorySize);
 }
@@ -21,7 +21,7 @@ void Player::printInventory() const {
         std::cout << "Slot " << i << ": " << inventory[i] << std::endl;
 }
 
-void Player::removeInventoryItem(int index) {
+void Player::removeInventoryItem(const int index) {
     if (index < 0 || index >= inventorySize) {
         std::cout << "Invalid index" << std::endl;
         return;

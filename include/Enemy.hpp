@@ -1,10 +1,8 @@
 #ifndef SAXIONCPP_ENEMY_HPP
 #define SAXIONCPP_ENEMY_HPP
 
-#include <iostream>
 #include <random>
-
-#include "Player.hpp"
+#include <iostream>
 
 class Enemy {
 public:
@@ -14,11 +12,11 @@ public:
     void displayStats() const;
     void assignStats();
 
-    void setHealth(int hp) { this->health = hp; }
-    void setAttack(int atk) { this->attack = atk; }
-    void setDefense(int def) { this->defense = def; }
-    void setAgility(int agl) { this->agility = agl; }
-    void setTotalPoints(int ttPts) { this->totalPoints = ttPts; }
+    void setHealth(const int hp) { this->health = hp; }
+    void setAttack(const int atk) { this->attack = atk; }
+    void setDefense(const int def) { this->defense = def; }
+    void setAgility(const int agl) { this->agility = agl; }
+    void setTotalPoints(const int ttPts) { this->totalPoints = ttPts; }
 
     [[nodiscard]] int getHealth() const { return health; }
     [[nodiscard]] int getAttack() const { return attack; }

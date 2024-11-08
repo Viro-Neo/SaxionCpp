@@ -19,11 +19,11 @@ void Enemy::assignStats() {
         std::cerr << "Total points not set" << std::endl;
         return;
     }
-    auto points = static_cast<float>(totalPoints);
-    float ratioHp = 100.0f / 120.0f;
-    float ratioAtk = 10.0f / 120.0f;
-    float ratioDef = 5.0f / 120.0f;
-    float ratioAgl = 5.0f / 120.0f;
+    const auto points = static_cast<float>(totalPoints);
+    constexpr float ratioHp = 100.0f / 120.0f;
+    constexpr float ratioAtk = 10.0f / 120.0f;
+    constexpr float ratioDef = 5.0f / 120.0f;
+    constexpr float ratioAgl = 5.0f / 120.0f;
 
     health = static_cast<int>(points * ratioHp);
     attack = static_cast<int>(points * ratioAtk);
