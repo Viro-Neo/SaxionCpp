@@ -12,3 +12,12 @@ void Character::displayStats() const {
     std::cout << "Agility: " << agility << std::endl;
     std::cout << std::endl;
 }
+
+void Character::dealDamageToTarget(Character& target) const {
+    int damage = this->attack - target.defense;
+    if (damage < 0)
+        damage = 0;
+    std::cout << this->name << " deals " << damage << " damage to " << target.name << std::endl;
+    target.health -= damage;
+    std::cout << target.name << " health: " << target.health << std::endl;
+}

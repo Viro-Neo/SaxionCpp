@@ -22,6 +22,8 @@ public:
     [[nodiscard]] int getDefense() const { return defense; }
     [[nodiscard]] int getAgility() const { return agility; }
 
+    void dealDamageToTarget(Character& target) const;
+
 private:
     std::string name;
     int health;

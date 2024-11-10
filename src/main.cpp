@@ -1,5 +1,6 @@
 #include "Player.hpp"
 #include "Enemy.hpp"
+#include "Character.hpp"
 #include <algorithm>
 #include <random>
 
@@ -21,24 +22,12 @@ for (int i = 0; i < nbrEnemies; i++)
 
 void battle(Player& player, Enemy& enemy) {
     while (player.getHealth() > 0) {
-        int playerDamage = player.getAttack() - enemy.getDefense();
-        int enemyDamage = enemy.getAttack() - player.getDefense();
-
-        if (playerDamage < 0)
-            playerDamage = 0;
-        if (enemyDamage < 0)
-            enemyDamage = 0;
-
-        std::cout << "Player deals " << playerDamage << " damage to Enemy" << std::endl;
-        enemy.setHealth(enemy.getHealth() - playerDamage);
-        std::cout << "Enemy health: " << enemy.getHealth() << std::endl;
+        player.dealDamageToTarget(enemy);
 
         if (enemy.getHealth() <= 0)
             break;
 
-        std::cout << "Enemy deals " << enemyDamage << " damage to Player" << std::endl;
-        player.setHealth(player.getHealth() - enemyDamage);
-        std::cout << "Player health: " << player.getHealth() << std::endl;
+        enemy.dealDamageToTarget(player);
     }
 
     if (player.getHealth() <= 0 && enemy.getHealth() <= 0)
