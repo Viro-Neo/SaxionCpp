@@ -1,4 +1,5 @@
 #include "Enemy.hpp"
+#include <iostream>
 
 Enemy::Enemy() : health(0), attack(0), defense(0), agility(0), totalPoints(0) {
     name = "Enemy";

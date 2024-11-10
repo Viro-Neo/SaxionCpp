@@ -1,8 +1,8 @@
 #ifndef SAXIONCPP_ENEMY_HPP
 #define SAXIONCPP_ENEMY_HPP
 
+#include "Player.hpp"
 #include <random>
-#include <iostream>
 
 class Enemy {
 public:
