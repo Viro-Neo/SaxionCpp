@@ -4,6 +4,7 @@ NAME	=	SaxionCpp
 
 SRC_PATH	=	./src/
 SRC_NAME	=	main.cpp	\
+				Character.cpp	\
 				Player.cpp	\
 				Enemy.cpp	\
 

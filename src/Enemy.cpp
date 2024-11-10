@@ -1,18 +1,12 @@
 #include "Enemy.hpp"
 #include <iostream>
 
-Enemy::Enemy() : health(0), attack(0), defense(0), agility(0), totalPoints(0) {
-    name = "Enemy";
-}
-
-void Enemy::displayStats() const {
-    std::cout << "Enemy " << this->name << " stats:" << std::endl;
-    std::cout << "Health: " << health << std::endl;
-    std::cout << "Attack: " << attack << std::endl;
-    std::cout << "Defense: " << defense << std::endl;
-    std::cout << "Agility: " << agility << std::endl;
-    std::cout << "Total points: " << totalPoints << std::endl;
-    std::cout << std::endl;
+Enemy::Enemy() : totalPoints(0) {
+    setName("Enemy");
+    setHealth(0);
+    setAttack(0);
+    setDefense(0);
+    setAgility(0);
 }
 
 void Enemy::assignStats() {
@@ -26,8 +20,8 @@ void Enemy::assignStats() {
     constexpr float ratioDef = 5.0f / 120.0f;
     constexpr float ratioAgl = 5.0f / 120.0f;
 
-    health = static_cast<int>(points * ratioHp);
-    attack = static_cast<int>(points * ratioAtk);
-    defense = static_cast<int>(points * ratioDef);
-    agility = static_cast<int>(points * ratioAgl);
+    setHealth(static_cast<int>(points * ratioHp));
+    setAttack(static_cast<int>(points * ratioAtk));
+    setDefense(static_cast<int>(points * ratioDef));
+    setAgility(static_cast<int>(points * ratioAgl));
 }

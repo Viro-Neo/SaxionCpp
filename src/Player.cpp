@@ -1,7 +1,11 @@
 #include "Player.hpp"
 
-Player::Player(const int inventorySize) : health(100), attack(10), defense(5), agility(5), inventorySize(inventorySize) {
-    name = "Player";
+Player::Player(const int inventorySize) : inventorySize(inventorySize) {
+    setName("Player");
+    setHealth(100);
+    setAttack(10);
+    setDefense(5);
+    setAgility(5);
     inventory = std::make_unique<std::string[]>(inventorySize);
 }
 
@@ -28,13 +32,4 @@ void Player::removeInventoryItem(const int index) {
     }
     inventory[index].clear();
     std::cout << "Removed item from inventory" << std::endl;
-}
-
-void Player::displayStats() const {
-    std::cout << "Player " << this->name << " stats:" << std::endl;
-    std::cout << "Health: " << health << std::endl;
-    std::cout << "Attack: " << attack << std::endl;
-    std::cout << "Defense: " << defense << std::endl;
-    std::cout << "Agility: " << agility << std::endl;
-    std::cout << std::endl;
 }
