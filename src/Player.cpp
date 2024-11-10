@@ -38,3 +38,12 @@ void Player::displayStats() const {
     std::cout << "Agility: " << agility << std::endl;
     std::cout << std::endl;
 }
+
+void Player::dealDamageToEnemy(Enemy& enemy) const {
+    int playerDamage = attack - enemy.getDefense();
+    if (playerDamage < 0)
+        playerDamage = 0;
+    std::cout << "Player deals " << playerDamage << " damage to Enemy" << std::endl;
+    enemy.setHealth(enemy.getHealth() - playerDamage);
+    std::cout << "Enemy health: " << enemy.getHealth() << std::endl;
+}
