@@ -21,13 +21,28 @@ for (int i = 0; i < nbrEnemies; i++)
 }
 
 void battle(Player& player, Enemy& enemy) {
+    bool playerTurn = true;
+
+    if (player.getAgility() < enemy.getAgility())
+        playerTurn = false;
+    else if (player.getAgility() == enemy.getAgility()) {
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> dis(0, 1);
+        playerTurn = dis(gen);
+    }
+
     while (player.getHealth() > 0) {
-        player.dealDamageToTarget(enemy);
+        if (playerTurn) {
+            player.dealDamageToTarget(enemy);
+            playerTurn = false;
+        } else {
+            enemy.dealDamageToTarget(player);
+            playerTurn = true;
+        }
 
         if (enemy.getHealth() <= 0)
             break;
-
-        enemy.dealDamageToTarget(player);
     }
 
     if (player.getHealth() <= 0 && enemy.getHealth() <= 0)
