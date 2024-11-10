@@ -18,7 +18,7 @@ for (int i = 0; i < nbrEnemies; i++)
 }
 
 void battle(Player& player, Enemy& enemy) {
-    while (player.getHealth() > 0 && enemy.getHealth() > 0) {
+    while (player.getHealth() > 0) {
         int playerDamage = player.getAttack() - enemy.getDefense();
         int enemyDamage = enemy.getAttack() - player.getDefense();
 
@@ -30,6 +30,9 @@ void battle(Player& player, Enemy& enemy) {
         std::cout << "Player deals " << playerDamage << " damage to Enemy" << std::endl;
         enemy.setHealth(enemy.getHealth() - playerDamage);
         std::cout << "Enemy health: " << enemy.getHealth() << std::endl;
+
+        if (enemy.getHealth() <= 0)
+            break;
 
         std::cout << "Enemy deals " << enemyDamage << " damage to Player" << std::endl;
         player.setHealth(player.getHealth() - enemyDamage);
