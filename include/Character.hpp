@@ -23,6 +23,7 @@ public:
     [[nodiscard]] int getAgility() const { return agility; }
 
     void dealDamageToTarget(Character& target) const;
+    void heal(Character& self) const;
 
 private:
     std::string name;
