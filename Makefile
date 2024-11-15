@@ -14,7 +14,7 @@ CPPFLAGS	=	-I./include
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(CPPFLAGS)
 
 clean:
 	rm -f $(OBJ)
