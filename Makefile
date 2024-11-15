@@ -4,6 +4,7 @@ NAME	=	SaxionCpp
 
 SRC_PATH	=	./src/
 SRC_NAME	=	main.cpp	\
+				fpsCounter.cpp	\
 
 SRC	=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ	=	$(SRC:.cpp=.o)

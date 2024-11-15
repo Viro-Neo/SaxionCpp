@@ -2,6 +2,7 @@
 #define MAIN_HPP
 
 #include <iostream>
-#include <SFML/Graphics.hpp>
+#include "fpsCounter.hpp"
+
 
 #endif //MAIN_HPP
