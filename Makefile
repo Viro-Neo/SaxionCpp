@@ -11,10 +11,12 @@ OBJ	=	$(SRC:.cpp=.o)
 CFLAGS	=	-Wall -Wextra -std=c++11
 CPPFLAGS	=	-I./include
 
+SFMLFLAGS	=	-lsfml-graphics -lsfml-window -lsfml-system
+
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(CPPFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(CPPFLAGS) $(SFMLFLAGS)
 
 clean:
 	rm -f $(OBJ)
