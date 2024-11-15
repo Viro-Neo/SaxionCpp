@@ -21,7 +21,7 @@ void Character::dealDamageToTarget(Character& target) const {
     }
     target.health -= damage;
     std::cout << name << " deals " << damage << " damage to " << target.name << std::endl;
-    std::cout << target.name << " health: " << target.health << std::endl;
+    std::cout << target.name << " health: " << (target.health < 0 ? 0 : target.health) << std::endl;
 }
 
 void Character::heal(Character& self) const {

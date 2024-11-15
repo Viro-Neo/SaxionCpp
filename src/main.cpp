@@ -40,8 +40,9 @@ void battle(Player& player, Enemy& enemy) {
             playerTurn = true;
         }
 
-        if (enemy.getHealth() <= 0)
+        if (enemy.getHealth() <= 0) {
             break;
+        }
     }
 
     if (player.getHealth() <= 0 && enemy.getHealth() <= 0)
