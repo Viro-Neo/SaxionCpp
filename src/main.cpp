@@ -33,10 +33,10 @@ void battle(Player& player, Enemy& enemy) {
 
     while (player.getHealth() > 0) {
         if (playerTurn) {
-            player.dealDamageToTarget(enemy);
+            Player::characterTurn(player, enemy);
             playerTurn = false;
         } else {
-            enemy.dealDamageToTarget(player);
+            Enemy::characterTurn(enemy, player);
             playerTurn = true;
         }
 

@@ -1,6 +1,7 @@
 #include "Character.hpp"
+#include <random>
 
-Character::Character() : health(0), attack(0), defense(0), agility(0) {
+Character::Character() : health(0), maxHealth(100), attack(0), defense(0), agility(0) {
     name = "Character";
 }
 
@@ -26,5 +27,28 @@ void Character::dealDamageToTarget(Character& target) const {
 
 void Character::heal(Character& self) const {
     self.health += defense;
+    if (self.health > maxHealth) {
+        self.health = maxHealth;
+        return;
+    }
     std::cout << name << " heals for " << defense << " health" << std::endl;
+}
+
+void Character::characterTurn(Character& self, Character& target) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 2);
+
+    std::cout << "_____________________" << std::endl;
+    std::cout << self.name << " turn" << std::endl;
+    std::cout << self.name << " health: " << self.health << std::endl;
+    if (const int action = dis(gen); action == 0) {
+        std::cout << self.name << " attacks" << std::endl;
+        self.dealDamageToTarget(target);
+    } else if (action == 1) {
+        std::cout << self.name << " heals himself" << std::endl;
+        self.heal(self);
+    } else {
+        std::cout << self.name << " does nothing" << std::endl;
+    }
 }

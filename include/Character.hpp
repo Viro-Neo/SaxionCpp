@@ -24,10 +24,12 @@ public:
 
     void dealDamageToTarget(Character& target) const;
     void heal(Character& self) const;
+    static void characterTurn(Character& self, Character& target) ;
 
 private:
     std::string name;
     int health;
+    int maxHealth;
     int attack;
     int defense;
     int agility;
