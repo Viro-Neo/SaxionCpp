@@ -42,6 +42,7 @@ void battle(Player& player, Enemy& enemy) {
 
         if (enemy.getHealth() <= 0) {
             player.lootItem();
+            player.setBodyCount(player.getBodyCount() + 1);
             break;
         }
     }
@@ -52,11 +53,12 @@ void battle(Player& player, Enemy& enemy) {
         std::cout << "Enemy wins" << std::endl;
     else
         std::cout << "Player wins" << std::endl;
+    std::cout << "Enemies killed: " << player.getBodyCount() << std::endl;
 }
 
 int main()
 {
-    constexpr int nbrEnemies = 20;
+    constexpr int nbrEnemies = 1;
     Player player(5);
     auto enemies = std::shared_ptr<Enemy[]>(new Enemy[nbrEnemies]);
 

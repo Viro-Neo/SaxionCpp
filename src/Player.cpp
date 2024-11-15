@@ -1,7 +1,7 @@
 #include "Player.hpp"
 #include <random>
 
-Player::Player(const int inventorySize) : inventorySize(inventorySize) {
+Player::Player(const int inventorySize) : bodyCount(0), inventorySize(inventorySize) {
     setName("Player");
     setHealth(100);
     setAttack(10);

@@ -14,9 +14,14 @@ public:
     void printInventory() const;
     void removeInventoryItem(int index);
 
+    [[nodiscard]] int getBodyCount() const { return bodyCount; }
+
+    void setBodyCount(const int bc) { bodyCount = bc; }
+
     void lootItem();
 
 private:
+    int bodyCount;
     int inventorySize;
     std::unique_ptr<std::string[]> inventory;
 };
