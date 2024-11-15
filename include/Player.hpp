@@ -14,6 +14,8 @@ public:
     void printInventory() const;
     void removeInventoryItem(int index);
 
+    void lootItem();
+
 private:
     int inventorySize;
     std::unique_ptr<std::string[]> inventory;

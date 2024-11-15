@@ -41,6 +41,7 @@ void battle(Player& player, Enemy& enemy) {
         }
 
         if (enemy.getHealth() <= 0) {
+            player.lootItem();
             break;
         }
     }
@@ -55,7 +56,7 @@ void battle(Player& player, Enemy& enemy) {
 
 int main()
 {
-    constexpr int nbrEnemies = 5;
+    constexpr int nbrEnemies = 20;
     Player player(5);
     auto enemies = std::shared_ptr<Enemy[]>(new Enemy[nbrEnemies]);
 

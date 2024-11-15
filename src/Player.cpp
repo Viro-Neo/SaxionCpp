@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include <random>
 
 Player::Player(const int inventorySize) : inventorySize(inventorySize) {
     setName("Player");
@@ -32,4 +33,18 @@ void Player::removeInventoryItem(const int index) {
     }
     inventory[index].clear();
     std::cout << "Removed item from inventory" << std::endl;
+}
+
+void Player::lootItem() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(1, 10);
+
+    std::cout << getName() << " loots item" << std::endl;
+    if (const int loot = dis(gen); loot <= 7)
+        std::cout << "No loot" << std::endl;
+    else {
+        std::cout << "Looted item" << std::endl;
+        addInventoryItem("Some item");
+    }
 }
