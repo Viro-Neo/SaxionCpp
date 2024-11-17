@@ -32,3 +32,5 @@
 *.app
 
 fpsCounterSFML
+hello_world
+sceneManager
