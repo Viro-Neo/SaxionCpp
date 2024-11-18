@@ -6,6 +6,7 @@ SRC_PATH	=	./src/
 SRC_NAME	=	main.cpp	\
 				fpsCounter.cpp	\
 				GenericLabel.cpp	\
+				GameObject.cpp	\
 
 SRC	=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ	=	$(SRC:.cpp=.o)

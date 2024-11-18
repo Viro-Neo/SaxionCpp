@@ -1,7 +1,7 @@
 #ifndef GAMEOBJECT_HPP
 #define GAMEOBJECT_HPP
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 class GameObject {
 

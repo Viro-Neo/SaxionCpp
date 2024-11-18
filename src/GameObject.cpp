@@ -1,5 +1,4 @@
 #include "GameObject.hpp"
-#include <utility>
 
 GameObject::GameObject(std::string identifier) : identifier(std::move(identifier)) { }
 

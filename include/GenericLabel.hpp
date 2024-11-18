@@ -1,16 +1,20 @@
 #ifndef GENERICLABEL_HPP
 #define GENERICLABEL_HPP
 
+#include "GameObject.hpp"
 #include <SFML/Graphics.hpp>
 
-class GenericLabel {
+class GenericLabel : public GameObject {
 public:
-    GenericLabel(const std::string& fontPath, const unsigned int characterSize, const sf::Color& fillColor);
-    ~GenericLabel() = default;
+    GenericLabel(const std::string &identifier, const std::string& fontPath, unsigned int characterSize, const sf::Color& fillColor);
+    GenericLabel(const GenericLabel& other);
+    ~GenericLabel() override;
+
+    void update() override;
+    void render(sf::RenderWindow& window) override;
 
     void setText(const std::string& text) { m_text.setString(text); }
     void setPosition(const sf::Vector2f& position) { m_position = position; }
-    void render(sf::RenderWindow& window) const;
 
 private:
     sf::Font m_font;

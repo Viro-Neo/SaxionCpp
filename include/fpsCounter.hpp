@@ -5,13 +5,13 @@
 #include "GenericLabel.hpp"
 #include <SFML/Graphics.hpp>
 
-class FPSCounter : public GenericLabel {
+class FPSCounter final : public GenericLabel {
 public:
     FPSCounter();
-    ~FPSCounter() = default;
+    ~FPSCounter() override = default;
 
     void update(const sf::Time& elapsed);
-    void render(sf::RenderWindow& window) const;
+    void render(sf::RenderWindow& window) override;
 };
 
 #endif //FPSCOUNTER_HPP

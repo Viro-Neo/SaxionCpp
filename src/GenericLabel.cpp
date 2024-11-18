@@ -1,13 +1,29 @@
 #include "GenericLabel.hpp"
 
-GenericLabel::GenericLabel(const std::string& fontPath, const unsigned int characterSize, const sf::Color& fillColor) {
+GenericLabel::GenericLabel(const std::string &identifier, const std::string& fontPath, const unsigned int characterSize, const sf::Color& fillColor) :
+    GameObject(identifier)
+{
     m_font.loadFromFile(fontPath);
     m_text.setFont(m_font);
     m_text.setCharacterSize(characterSize);
     m_text.setFillColor(fillColor);
-    m_text.setPosition(m_position);
 }
 
-void GenericLabel::render(sf::RenderWindow& window) const {
+GenericLabel::GenericLabel(const GenericLabel& other) :
+    GameObject(other.getIdentifier())
+{
+    m_font = other.m_font;
+    m_text = other.m_text;
+    m_position = other.m_position;
+}
+
+GenericLabel::~GenericLabel() = default;
+
+void GenericLabel::update() {
+
+}
+
+void GenericLabel::render(sf::RenderWindow& window) {
+    m_text.setPosition(m_position);
     window.draw(m_text);
 }

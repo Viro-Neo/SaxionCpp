@@ -4,5 +4,4 @@
 #include <iostream>
 #include "fpsCounter.hpp"
 
-
 #endif //MAIN_HPP
