@@ -17,6 +17,9 @@ int main() {
     label3->setPosition(sf::Vector2f(300, 500));
     window.setFramerateLimit(60);
 
+    label1->addChild(label2);
+    label1->addChild(label3);
+
     while (window.isOpen()) {
         sf::Event event{};
         while (window.pollEvent(event)) {
