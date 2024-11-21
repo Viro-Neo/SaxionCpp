@@ -19,6 +19,7 @@ int main() {
 
     label1->addChild(label2);
     label1->addChild(label3);
+    label1->removeChild("label3");
 
     while (window.isOpen()) {
         sf::Event event{};
@@ -29,6 +30,13 @@ int main() {
         }
 
         window.clear();
+
+        // Move the parent label back and forth
+        const auto position = label1->getPosition();
+        label1->setPosition(sf::Vector2f(position.x + 1, position.y));
+        if (position.x >= 500) {
+            label1->setPosition(sf::Vector2f(100, position.y));
+        }
 
         fpsCounter.update(elapsed);
         fpsCounter.render(window);

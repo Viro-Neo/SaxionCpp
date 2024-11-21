@@ -14,12 +14,10 @@ public:
     void render(sf::RenderWindow& window) override;
 
     void setText(const std::string& text) { m_text.setString(text); }
-    void setPosition(const sf::Vector2f& position) { m_position = position; }
 
 private:
     sf::Font m_font;
     sf::Text m_text;
-    sf::Vector2f m_position;
 };
 
 #endif //GENERICLABEL_HPP

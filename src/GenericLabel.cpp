@@ -14,7 +14,6 @@ GenericLabel::GenericLabel(const GenericLabel& other) :
 {
     m_font = other.m_font;
     m_text = other.m_text;
-    m_position = other.m_position;
 }
 
 GenericLabel::~GenericLabel() = default;
@@ -24,6 +23,6 @@ void GenericLabel::update() {
 }
 
 void GenericLabel::render(sf::RenderWindow& window) {
-    m_text.setPosition(m_position);
+    m_text.setPosition(GameObject::getPosition());
     window.draw(m_text);
 }
