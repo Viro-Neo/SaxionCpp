@@ -4,10 +4,6 @@ Game::Game() : window(sf::VideoMode(1280, 720), GAME_NAME) {
     window.setFramerateLimit(60);
 }
 
-Game::~Game() {
-    window.close();
-}
-
 void Game::loop() {
     while (window.isOpen()) {
         while (window.pollEvent(event)) {

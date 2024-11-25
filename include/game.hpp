@@ -1,6 +1,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
-#define GAME_NAME "Katana ZERO: CMGT Edition"
+#define GAME_NAME "Game"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
@@ -8,7 +8,7 @@
 class Game {
 public:
     Game();
-    ~Game();
+    ~Game() = default;
 
     void loop();
 
