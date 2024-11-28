@@ -1,6 +1,6 @@
 #include "game.hpp"
 
-Game::Game() : window(sf::VideoMode(1280, 720), GAME_NAME) {
+Game::Game() : window(sf::VideoMode(1280, 720), GAME_NAME), mainMenu("mainMenu"), arena("fightClub") {
     window.setFramerateLimit(60);
 }
 
