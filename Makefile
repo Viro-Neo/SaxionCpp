@@ -8,6 +8,7 @@ SRC_NAME	=	main.cpp	\
 				scene.cpp	\
 				sceneHandler.cpp	\
 				gameObject.cpp	\
+				button.cpp	\
 
 SRC	=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ	=	$(SRC:.cpp=.o)
