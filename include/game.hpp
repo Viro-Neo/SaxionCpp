@@ -1,7 +1,10 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 #define GAME_NAME "Game"
+#define WIN_WIDTH 1280
+#define WIN_HEIGHT 720
 
+#include "button.hpp"
 #include "sceneHandler.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
@@ -16,6 +19,8 @@ public:
 private:
     sf::RenderWindow window;
     sf::Event event{};
+    sf::Font font;
+
     Scene mainMenu;
     Scene arena;
     SceneHandler sceneManager;
