@@ -20,13 +20,9 @@ void SceneHandler::addScene(Scene& scene) {
 }
 
 void SceneHandler::stackScene(const std::string& sceneName) {
-    if(this->scenes.find(sceneName) != this->scenes.end()) {
-        this->scenesStack.push(this->scenes.at(sceneName));
-    }
+    this->scenesStack.push(scenes[sceneName]);
 }
 
 void SceneHandler::popScene() {
-    if(!this->scenesStack.empty()) {
-        this->scenesStack.pop();
-    }
+    this->scenesStack.pop();
 }
