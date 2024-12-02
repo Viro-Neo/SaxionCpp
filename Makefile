@@ -3,12 +3,7 @@ CC	=	g++
 NAME	=	SaxionCpp
 
 SRC_PATH	=	./src/
-SRC_NAME	=	main.cpp	\
-				game.cpp	\
-				scene.cpp	\
-				sceneHandler.cpp	\
-				gameObject.cpp	\
-				button.cpp	\
+SRC_NAME	=	main.cpp
 
 SRC	=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ	=	$(SRC:.cpp=.o)
