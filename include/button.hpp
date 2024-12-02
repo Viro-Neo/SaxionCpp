@@ -6,18 +6,19 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 
-class Button final : public GameObject {
+class Button : public GameObject {
 public:
-    Button(const std::string &identifier, sf::Font& font, const std::string& buttonText, sf::Vector2f size, sf::Color color);
+    Button(const std::string &identifier, sf::Font& font, const std::string& buttonText,
+            sf::Vector2f size, sf::Color color);
     ~Button() override = default;
 
     void handleEvent(const sf::Event& event, sf::RenderWindow& window) override;
+    virtual void onClick();
 
-    void onClick() const;
-
-    void update() override;
+    void update() override {}
     void render(sf::RenderWindow& window) override;
-    void setButtonAction(std::function<void()> action);
+
+    void setButtonAction(const std::function<void()> &action);
     void setCharacterSize(int size);
     void setPosition(sf::Vector2f position);
 
