@@ -12,6 +12,7 @@ SRC_NAME	=	main.cpp	\
 				character.cpp	\
 				spriteObject.cpp	\
 				textObject.cpp	\
+				mainMenu.cpp	\
 
 SRC	=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ	=	$(SRC:.cpp=.o)

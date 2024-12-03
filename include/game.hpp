@@ -4,7 +4,7 @@
 #define WIN_WIDTH 1280
 #define WIN_HEIGHT 720
 
-#include "sceneHandler.hpp"
+#include "mainMenu.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 
@@ -19,9 +19,7 @@ private:
     sf::RenderWindow window;
     sf::Event event{};
 
-    Scene mainMenu;
-    Scene arena;
-    SceneHandler sceneManager;
+    MainMenu mainMenu;
 };
 
 #endif //GAME_HPP
