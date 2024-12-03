@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+SaxionCpp
 
 # Course directory
 Buttons
