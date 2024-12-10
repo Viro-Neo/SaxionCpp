@@ -1,8 +1,6 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 #define GAME_NAME "Game"
-#define WIN_WIDTH 1280
-#define WIN_HEIGHT 720
 
 #include "mainMenu.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>

@@ -14,24 +14,24 @@ MainMenu::MainMenu() :  Scene("mainMenu"),
     title.setString("Main Menu");
     title.setCharacterSize(50);
     title.setFillColor(sf::Color::White);
-    title.setPosition(400, 50);
+    title.setPosition(WIN_WIDTH / 2.0f - title.getGlobalBounds().width / 2.0f, 50);
 
-    playButton.setPosition(sf::Vector2f(400, 200));
+    playButton.setPosition(sf::Vector2f(WIN_WIDTH / 2.0f - 100, 200));
     playButton.setButtonAction([this] {
         std::cout << "Play button clicked" << std::endl;
     });
 
-    exitButton.setPosition(sf::Vector2f(400, 300));
+    exitButton.setPosition(sf::Vector2f(WIN_WIDTH / 2.0f - 100, 300));
     exitButton.setButtonAction([this] {
         std::cout << "Exit button clicked" << std::endl;
     });
 
-    eraseDataButton.setPosition(sf::Vector2f(400, 400));
+    eraseDataButton.setPosition(sf::Vector2f(WIN_WIDTH / 2.0f - 100, 400));
     eraseDataButton.setButtonAction([this] {
         std::cout << "Erase Data button clicked" << std::endl;
     });
 
-    rankingButton.setPosition(sf::Vector2f(400, 500));
+    rankingButton.setPosition(sf::Vector2f(WIN_WIDTH / 2.0f - 100, 500));
     rankingButton.setButtonAction([this] {
         std::cout << "Ranking button clicked" << std::endl;
     });
