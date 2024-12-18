@@ -13,6 +13,7 @@ SRC_NAME	=	main.cpp	\
 				spriteObject.cpp	\
 				textObject.cpp	\
 				mainMenu.cpp	\
+				fileStream.cpp	\
 
 SRC	=	$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ	=	$(SRC:.cpp=.o)
