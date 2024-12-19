@@ -1,23 +1,27 @@
 #ifndef FILESTREAM_HPP
 #define FILESTREAM_HPP
+#define SAVEFILE_PATH "saves/saveFile.cmgt"
+#define PLAYER_PATH "saves/player.cmgt"
+#define ENEMY_PATH "saves/enemy.cmgt"
 
 #include <string>
+#include <fstream>
 
 class FileStream {
 public:
-    FileStream() = default;
-    ~FileStream() = default;
+    FileStream();
+    ~FileStream();
 
-    static std::string read(const std::string& path);
-    static void write(const std::string& path, const std::string& content);
-    static void append(const std::string& path, const std::string& content);
-    static void erase(const std::string& path);
-    static bool exists(const std::string& path);
-    static bool isDirectory(const std::string& path);
+    void eraseFile();
+    void rewriteSaveFile(const std::string& content);
 
 private:
-    std::string path;
-    std::string content;
+    std::fstream file;
+    std::string line;
+
+    std::string saveFilePath;
+    std::string playerPath;
+    std::string enemyPath;
 };
 
 #endif //FILESTREAM_HPP

@@ -1,4 +1,5 @@
 #include "mainMenu.hpp"
+#include <iostream>
 
 MainMenu::MainMenu() :  Scene("mainMenu"),
                         playButton("playButton", font, "Play", sf::Vector2f(200, 50), sf::Color::Green),

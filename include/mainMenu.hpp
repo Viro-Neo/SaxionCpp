@@ -8,7 +8,6 @@
 #include "button.hpp"
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
-#include <iostream>
 
 class MainMenu : public Scene {
 public:
